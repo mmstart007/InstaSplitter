@@ -1,0 +1,6 @@
+framework module Pods_Instasplitter {
+  umbrella header "Pods-Instasplitter-umbrella.h"
+
+  export *
+  module * { export * }
+}

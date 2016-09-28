@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "EditVideoController.trimVideo(Int) -&gt; ():EditVideoController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ass.duration">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EditVideoController.(splitAction(AnyObject) -&gt; ()).(closure #1):EditVideoController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.playView.player">
+            </PersistentString>
+            <PersistentString
+               value = "SVariables.videoURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
