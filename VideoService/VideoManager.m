@@ -373,13 +373,13 @@ static int rotateIndex = 0;
         CGAffineTransform transform = CGAffineTransformIdentity;
         
         if(count == 1) {
-            transform = CGAffineTransformRotate(transform, 1.57);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
             transform = CGAffineTransformTranslate(transform, 0, -renderSize.width);
         }else if(count == 2){
-            transform = CGAffineTransformRotate(transform, 3.14);
+            transform = CGAffineTransformRotate(transform, M_PI);
             transform = CGAffineTransformTranslate(transform, -renderSize.width, -renderSize.height);
         }else if(count == 3){
-            transform = CGAffineTransformRotate(transform, 4.71);
+            transform = CGAffineTransformRotate(transform, M_PI_2 * 3);
             transform = CGAffineTransformTranslate(transform, -renderSize.height, 0);
         }
         
