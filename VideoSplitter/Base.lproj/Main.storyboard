@@ -23,7 +23,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-1I-bCI">
                                         <color key="backgroundColor" red="0.0078431372550000003" green="0.6588235294" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="loadVideoAction:" destination="qqr-aR-bo9" eventType="touchUpInside" id="OkZ-KS-Edu"/>
                                         </connections>
@@ -44,7 +43,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0078431372550000003" green="0.6588235294" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="tyc-1I-bCI" firstAttribute="height" secondItem="h9O-g2-w2E" secondAttribute="height" id="3zz-yE-aqb"/>
                                     <constraint firstItem="tyc-1I-bCI" firstAttribute="centerY" secondItem="h9O-g2-w2E" secondAttribute="centerY" id="7uo-0u-BLD"/>
@@ -96,7 +94,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="middleView" destination="h9O-g2-w2E" id="SdI-5p-YOH"/>
+                        <outlet property="btnLoad" destination="tyc-1I-bCI" id="JZl-jC-OaN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVC-Jo-PC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,7 +194,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.4746696399" green="0.86796046410000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZXX-pa-xqh" secondAttribute="height" multiplier="1:1" id="05p-Vd-KlX"/>
                                     <constraint firstItem="yeg-V0-auN" firstAttribute="height" secondItem="ZXX-pa-xqh" secondAttribute="height" id="7bV-oZ-HJw"/>
@@ -633,6 +630,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7i8-9N-o6x">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Up-El-2x2">
+                                        <color key="backgroundColor" red="0.0078431372550000003" green="0.6588235294" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="comboAction:" destination="Im7-bu-0jn" eventType="touchUpInside" id="Wav-Ft-E2M"/>
                                         </connections>
@@ -644,16 +642,15 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0078431372550000003" green="0.6588235294" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="0Up-El-2x2" firstAttribute="width" secondItem="7i8-9N-o6x" secondAttribute="width" id="0iv-Ta-Y9X"/>
+                                    <constraint firstItem="0Up-El-2x2" firstAttribute="centerY" secondItem="7i8-9N-o6x" secondAttribute="centerY" id="3Oc-p8-o02"/>
                                     <constraint firstItem="jmd-QQ-Vbe" firstAttribute="centerY" secondItem="7i8-9N-o6x" secondAttribute="centerY" id="66V-ow-UKu"/>
                                     <constraint firstItem="jmd-QQ-Vbe" firstAttribute="centerX" secondItem="7i8-9N-o6x" secondAttribute="centerX" id="7Lc-Wb-dLC"/>
                                     <constraint firstAttribute="height" constant="160" id="KPE-Y4-dri"/>
-                                    <constraint firstItem="0Up-El-2x2" firstAttribute="centerY" secondItem="jmd-QQ-Vbe" secondAttribute="centerY" id="VCV-Xc-0Eh"/>
+                                    <constraint firstItem="0Up-El-2x2" firstAttribute="height" secondItem="7i8-9N-o6x" secondAttribute="height" id="Rib-Xl-KCW"/>
                                     <constraint firstAttribute="width" constant="160" id="n8t-wq-Wag"/>
-                                    <constraint firstItem="0Up-El-2x2" firstAttribute="width" secondItem="jmd-QQ-Vbe" secondAttribute="width" id="nfN-kE-FmR"/>
-                                    <constraint firstItem="0Up-El-2x2" firstAttribute="height" secondItem="jmd-QQ-Vbe" secondAttribute="height" id="t1D-08-LDb"/>
-                                    <constraint firstItem="0Up-El-2x2" firstAttribute="centerX" secondItem="jmd-QQ-Vbe" secondAttribute="centerX" id="tTD-cM-0gV"/>
+                                    <constraint firstItem="0Up-El-2x2" firstAttribute="centerX" secondItem="7i8-9N-o6x" secondAttribute="centerX" id="uWx-1V-z8c"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyi-tl-Mgh">
@@ -757,9 +754,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnLoad" destination="0Up-El-2x2" id="WIb-01-9N0"/>
                         <outlet property="comboView" destination="oBd-ZZ-FZu" id="Q3W-6A-aRj"/>
                         <outlet property="combo_label" destination="AF4-zp-RqC" id="C63-nX-N6t"/>
-                        <outlet property="middleView" destination="7i8-9N-o6x" id="Rov-pL-r3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H33-eP-fub" userLabel="First Responder" sceneMemberID="firstResponder"/>

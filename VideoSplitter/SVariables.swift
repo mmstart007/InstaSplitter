@@ -8,10 +8,10 @@ class SVariables{
     
     class func calcTimeString(time: CGFloat) -> String {
         var temp = "0:0s"
-        temp = "" + String(Int(time/60))
-        let remainder = time.remainder(dividingBy: 60)
-        temp += String(Int(remainder))
-//        temp = "" + String(Int(time/60)) + ":" + String(Int(time%60)) + "s"
+        let intVal: Int = Int(time/60)
+        let remainder: Int = Int(round(time - CGFloat(intVal * 60)))
+//        let remainder = time.remainder(dividingBy: 60)
+        temp = "\(intVal):\(remainder)s"
         return temp
     }
     

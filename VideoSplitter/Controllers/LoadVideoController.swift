@@ -7,12 +7,18 @@ import MobileCoreServices
 class LoadVideoController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let picker = UIImagePickerController()
-    @IBOutlet weak var middleView: UIView!
+    
+    @IBOutlet weak var btnLoad: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        middleView.layer.cornerRadius = middleView.bounds.width/2
         picker.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        btnLoad.layer.cornerRadius = btnLoad.bounds.width / 2
     }
     
     @IBAction func loadVideoAction(_ sender: AnyObject) {

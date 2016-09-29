@@ -40,6 +40,7 @@ class EditVideoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        IQKeyboardManager.sharedManager().enable = true
         videoAsset = AVURLAsset(url: SVariables.videoURL! as URL)
         let playerItem = AVPlayerItem(asset: videoAsset)
         previewVideoPlayer = AVPlayer(playerItem: playerItem)
@@ -117,13 +118,17 @@ class EditVideoController: UIViewController {
                 splitTime = time
             }else {
                 showAlertView(title: "Error", content: "Please input valid number!")
+                custom_split_time.text = ""
+                custom_split_time.becomeFirstResponder()
                 return
             }
         }
         self.progressFlag = true
         
-        totalFrames = Int((endTime.seconds - startTime.seconds)/splitTime)
-        let remainder = endTime.seconds.remainder(dividingBy: splitTime)
+        let temp: Double = endTime.seconds - startTime.seconds
+        totalFrames = Int(temp/splitTime)
+//        let remainder = endTime.seconds.remainder(dividingBy: splitTime)
+        let remainder = temp - Double(totalFrames) * splitTime
         if Int(remainder) > 0 {
             totalFrames += 1
         }
@@ -234,7 +239,7 @@ class EditVideoController: UIViewController {
             self.isPlaying = false
         }
         SVariables.incCount()
-        self.playView.transform = CGAffineTransform(rotationAngle: CGFloat(1.57 * CGFloat(SVariables.count)))
+        self.playView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2 * Double(SVariables.count)))
     }
     @IBAction func InstagramStoriesAction(_ sender: AnyObject) {
         selectedComboText.text = "Instagram Stories"
@@ -290,8 +295,8 @@ extension EditVideoController: SAVideoRangeSliderDelegate{
         }
     }
     func videoRange(_ videoRange: SAVideoRangeSlider!, didGestureStateEndedLeftPosition leftPosition: CGFloat, rightPosition: CGFloat) {
-        self.startTime = CMTimeMake(Int64(Int32(leftPosition) * self.videoAsset.duration.timescale), self.videoAsset.duration.timescale)
-        self.endTime = CMTimeMake(Int64(Int32(rightPosition) * self.videoAsset.duration.timescale), self.videoAsset.duration.timescale)
+        self.startTime = CMTimeMake(Int64(Double(leftPosition) * Double(self.videoAsset.duration.timescale)), self.videoAsset.duration.timescale)
+        self.endTime = CMTimeMake(Int64(Double(rightPosition) * Double(self.videoAsset.duration.timescale)), self.videoAsset.duration.timescale)
         self.lblStartTime.text = SVariables.calcTimeString(time: leftPosition)
         self.lblEndTime.text = SVariables.calcTimeString(time: rightPosition)
         

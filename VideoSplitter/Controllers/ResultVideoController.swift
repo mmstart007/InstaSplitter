@@ -8,17 +8,22 @@ class ResultVideoController: UIViewController, UIImagePickerControllerDelegate, 
     
     let picker = UIImagePickerController()
     
-    @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var comboView: UIView!
     @IBOutlet weak var combo_label: UILabel!
+    @IBOutlet weak var btnLoad: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        middleView.layer.cornerRadius = middleView.bounds.width/2
         comboView.isHidden = true
         picker.delegate = self
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        btnLoad.layer.cornerRadius = btnLoad.bounds.width/2
     }
     
     func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: UINavigationControllerDelegate & UIImagePickerControllerDelegate) -> Bool {
