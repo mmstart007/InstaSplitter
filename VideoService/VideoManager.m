@@ -216,8 +216,21 @@ static int rotateIndex = 0;
         assetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
         
         CGAffineTransform transform = CGAffineTransformIdentity;
+
+        if(assetTrack.preferredTransform.a < 0 && assetTrack.preferredTransform.d < 0)
+            transform = CGAffineTransformTranslate(CGAffineTransformIdentity, renderSize.width, renderSize.height);
+        else if(assetTrack.preferredTransform.b > 0 && assetTrack.preferredTransform.c < 0)
+            transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, renderSize.width);
+        else if(assetTrack.preferredTransform.b < 0 && assetTrack.preferredTransform.c > 0)
+            transform = CGAffineTransformTranslate(CGAffineTransformIdentity, renderSize.height, 0);
+        
         [layerInstruction setTransform:CGAffineTransformConcat(assetTrack.preferredTransform, transform) atTime:kCMTimeZero];
         [layerInstruction setOpacity:1.0 atTime:kCMTimeZero];
+        
+        CGAffineTransform temp = CGAffineTransformConcat(assetTrack.preferredTransform, transform);
+        NSLog(@"CGAffineTransform: a=%f, b=%f, c=%f, d=%f, tx=%f, ty=%f", assetTrack.preferredTransform.a, assetTrack.preferredTransform.b, assetTrack.preferredTransform.c, assetTrack.preferredTransform.d, assetTrack.preferredTransform.tx, assetTrack.preferredTransform.ty);
+        NSLog(@"CGAffineTransform SetTransform: a=%f, b=%f, c=%f, d=%f, tx=%f, ty=%f", temp.a, temp.b, temp.c, temp.d, temp.tx, temp.ty);
+        NSLog(@"Render Size: width=%f, height=%f", renderSize.width, renderSize.height);
     }
     
     AVMutableVideoCompositionInstruction * mainInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
@@ -371,6 +384,16 @@ static int rotateIndex = 0;
         assetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
         
         CGAffineTransform transform = CGAffineTransformIdentity;
+        
+        if(assetTrack.preferredTransform.a < 0 && assetTrack.preferredTransform.d < 0)
+            transform = CGAffineTransformTranslate(CGAffineTransformIdentity, renderSize.width, renderSize.height);
+        else if(assetTrack.preferredTransform.b > 0 && assetTrack.preferredTransform.c < 0)
+            transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, renderSize.width);
+        else if(assetTrack.preferredTransform.b < 0 && assetTrack.preferredTransform.c > 0)
+            transform = CGAffineTransformTranslate(CGAffineTransformIdentity, renderSize.height, 0);
+//        [layerInstruction setTransform:CGAffineTransformConcat(assetTrack.preferredTransform, transform) atTime:kCMTimeZero];
+//        [layerInstruction setOpacity:1.0 atTime:kCMTimeZero];
+//        transform = CGAffineTransformIdentity;
         
         if(count == 1) {
             transform = CGAffineTransformRotate(transform, M_PI_2);

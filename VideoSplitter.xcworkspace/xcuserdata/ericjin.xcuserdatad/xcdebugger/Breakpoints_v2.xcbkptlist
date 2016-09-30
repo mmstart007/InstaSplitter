@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoSplitter/Controllers/LoadVideoController.swift"
-            timestampString = "496778681.347658"
+            filePath = "VideoService/VideoManager.m"
+            timestampString = "496909422.557326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "imagePickerControllerDidCancel(_:)"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "+rotateVideo:count:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoService/VideoManager.m"
-            timestampString = "496773888.621679"
+            timestampString = "496909422.557326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "+trimVideo:startTime:endTime:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoService/VideoManager.m"
+            timestampString = "496910682.987949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "+rotateVideo:count:completion:"
             landmarkType = "7">
          </BreakpointContent>
