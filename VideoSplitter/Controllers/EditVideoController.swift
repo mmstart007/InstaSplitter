@@ -137,7 +137,7 @@ class EditVideoController: UIViewController {
         rotate_save_session = VideoManager.rotateVideo(url as URL!, count: SVariables.count, completion: { (outputURL) in
             self.rotate_save_session = nil
             if outputURL != nil {
-                print(outputURL)
+                print(outputURL!)
                 SVariables.videoURL = outputURL as NSURL?
                 self.videoAsset = AVURLAsset(url: outputURL!)
                 
@@ -186,7 +186,7 @@ class EditVideoController: UIViewController {
         self.total_progress = self.progressView.progress
         self.exportSession = VideoManager.trimVideo(SVariables.videoURL as URL!, start: split_start_time, end: split_end_time, completion: { (outputURL) in
             if outputURL != nil {
-                print(outputURL)
+                print(outputURL!)
                 VideoManager.save(outputURL)
                 if index == self.totalFrames {
                     self.playTimer.invalidate()
@@ -219,9 +219,9 @@ class EditVideoController: UIViewController {
     }
 
     @IBAction func cancelAction(_ sender: AnyObject) {
-//        if progressFlag == true {
-//            return
-//        }
+        //        if progressFlag == true {
+        //            return
+        //        }
         self.playTimer.invalidate()
         if self.isPlaying == true {
             self.previewVideoPlayer.pause()

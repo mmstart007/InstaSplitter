@@ -659,12 +659,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Patrick Colucci (96ZWSS2R65)";
 				INFOPLIST_FILE = VideoSplitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluespider.dripdoctors;
 				PRODUCT_NAME = Instasplitter;
-				PROVISIONING_PROFILE = "9e82df04-8461-4c2e-851b-d406a3303e2c";
+				PROVISIONING_PROFILE = "431b563d-d693-4ac5-8ac8-9c9796b3ddc5";
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 			};
@@ -676,13 +676,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Patrick Colucci (96ZWSS2R65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Patrick Colucci (96ZWSS2R65)";
 				INFOPLIST_FILE = VideoSplitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluespider.dripdoctors;
 				PRODUCT_NAME = Instasplitter;
-				PROVISIONING_PROFILE = "9e82df04-8461-4c2e-851b-d406a3303e2c";
+				PROVISIONING_PROFILE = "431b563d-d693-4ac5-8ac8-9c9796b3ddc5";
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
 			};

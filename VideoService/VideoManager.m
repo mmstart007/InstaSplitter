@@ -256,7 +256,7 @@ static int rotateIndex = 0;
     exporter.shouldOptimizeForNetworkUse = YES;
     
     [exporter exportAsynchronouslyWithCompletionHandler:^
-     {
+    {
          BOOL success = YES;
          switch ([exporter status]) {
              case AVAssetExportSessionStatusCompleted:
@@ -391,9 +391,9 @@ static int rotateIndex = 0;
             transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, renderSize.width);
         else if(assetTrack.preferredTransform.b < 0 && assetTrack.preferredTransform.c > 0)
             transform = CGAffineTransformTranslate(CGAffineTransformIdentity, renderSize.height, 0);
-//        [layerInstruction setTransform:CGAffineTransformConcat(assetTrack.preferredTransform, transform) atTime:kCMTimeZero];
-//        [layerInstruction setOpacity:1.0 atTime:kCMTimeZero];
-//        transform = CGAffineTransformIdentity;
+        [layerInstruction setTransform:CGAffineTransformConcat(assetTrack.preferredTransform, transform) atTime:kCMTimeZero];
+        [layerInstruction setOpacity:1.0 atTime:kCMTimeZero];
+        transform = CGAffineTransformIdentity;
         
         if(count == 1) {
             transform = CGAffineTransformRotate(transform, M_PI_2);
